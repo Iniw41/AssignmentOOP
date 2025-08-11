@@ -11,14 +11,14 @@
             while (true)
             {
                 Console.Write("Enter your full name: ");
-                string input = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(input))
+                fullname = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(fullname))
                 {
                     Console.WriteLine("Full name cannot be empty. Please try again.");
                 }
                 else
                 {
-                    Console.WriteLine($"Hello, <{input}>!");
+                    Console.WriteLine($"Hello, <{fullname}>!");
                     break;
                 }
             }
@@ -39,8 +39,8 @@
                 float average = (num1 + num2 + num3) / 3.0f;
                 float product = num1 * num2 * num3;
 
-                    Console.WriteLine($"Average: {average}");
-                    Console.WriteLine($"Product: {product}");
+                    Console.WriteLine($"Average: {Math.round(average, 2)}");
+                    Console.WriteLine($"Product: {Math.round(product, 2)}");
                     break;
                 }
             }
@@ -50,7 +50,7 @@
                 if (float.TryParse(Console.ReadLine(), out float raduis) && raduis > 0)
                 {
                     float volume = (4.0f / 3.0f) * MathF.PI * MathF.Pow(raduis, 3);
-                    Console.WriteLine($"Volume of the sphere with radius {raduis} is: {volume}");
+                    Console.WriteLine($"Volume of the sphere with radius {Math.round(raduis, 2)} is: {Math.round(volume, 4)}");
                     break;
                 }
                 else
